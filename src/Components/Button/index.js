@@ -5,7 +5,7 @@ import styles from './index.module.css';
 
 import { HashLink as Link } from 'react-router-hash-link';
 
-const Button = ({title, size, link, onClick}) => {
+const Button = ({title, size, link, onClick, submit}) => {
     const sizeMap = {
         s: styles['size-s'],
         m: styles['size-m'],
@@ -13,7 +13,7 @@ const Button = ({title, size, link, onClick}) => {
 
     if (link) {
         return (
-            <div>
+            <div className={styles.link}>
                 <Link className={classnames(styles.link, sizeMap[size])} smooth to={link}>
                     {title}
                 </Link>    
@@ -22,12 +22,15 @@ const Button = ({title, size, link, onClick}) => {
     }
 
     return (
-        <button 
-            className={classnames(styles.button, sizeMap[size])}
-            onClick={onClick}
-        >
-            {title}
-        </button>
+        <div className={styles.container}>
+            <button
+                type={submit ? 'submit' : null}
+                className={classnames(styles.button, sizeMap[size])}
+                onClick={onClick}
+            >
+                {title}
+            </button>
+        </div>
     );
 }
 

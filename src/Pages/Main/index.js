@@ -1,9 +1,9 @@
 import React from 'react';
 import classnames from 'classnames';
 
-import HeaderLink from '../Components/HeaderLink';
-import Button from '../Components/Button';
-import mainImage from '../assets/mainImage.JPG';
+import HeaderLink from '../../Components/HeaderLink';
+import Button from '../../Components/Button';
+import mainImage from '../../assets/mainImage.JPG';
 
 import styles from './index.module.css';
 
@@ -28,7 +28,7 @@ const Main = () => (
                 <div>Москва, Россия</div>
             </div>
             <div>
-                <Button size="m" title="Я пойду" link="#wishlist" />
+                <Button size="m" title="Я пойду" link="/iwillgo" />
             </div>
         </div>
         <div id="story" className={classnames(styles.block, styles.story)} />

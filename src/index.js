@@ -6,16 +6,21 @@ import {
   Route
 } from "react-router-dom";
 
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
-import Main from './Main';
+import Main from './Pages/Main';
+import Participants from './Pages/Participants';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
   <React.StrictMode>
     <Router>
       <Switch>
-      <Route path="/main">
+        <Route path="/main">
           <Main />
+        </Route>
+        <Route path="/iwillgo">
+          <Participants />
         </Route>
         <Route path="/">
           <Main />
