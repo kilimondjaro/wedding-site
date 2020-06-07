@@ -16,23 +16,42 @@
     justify-content: space-between;
 }
 
+.header .title {
+    font-size: 24px;
+}
+
 .navigation .link {
     margin-left: 15px;
 }
 
 .block {
     margin: 30px 0;        
-    height: 1000px;    
+    height: calc(100vh - 40px);   
+    width: 100%;
+    padding: 20px 0;
 }
 
 .image {}
 
 .main {
-    background-color: red;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    align-items: center;
 }
 
 .main .image {
-    width: 100%;
+    width: 100%;    
+    height: calc(100vh / 4 * 2);
+    object-fit: cover;
+}
+
+.main .title {
+    font-size: 40px;
+}
+
+.main .date {
+    font-size: 24px;
 }
 
 .story {
