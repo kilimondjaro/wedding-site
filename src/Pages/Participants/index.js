@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import classnames from 'classnames';
 import { Form } from 'react-bootstrap';
 
@@ -13,23 +13,56 @@ const TRANSPORT = [
 
 const Participants = () => {
     const [name, setName] = useState(null);
-    const [count, setCount] = useState(null);
-    const [transport, setTransport] = useState(null);
+    const [count, setCount] = useState(1);
+    const [transport, setTransport] = useState(TRANSPORT[0]);
     const [guests, setGuests] = useState(null);
+    const [comments, setComments] = useState(null);
+    const [validated, setValidated] = useState(false);
+    const [saving, setSaving] = useState(false);
+    const [success, setSuccess] = useState(false);
 
-    const onSubmit = event => {
-        event.preventDefault()
-        console.log(event);
+    const formRef = useRef(null);
+
+    const onSubmit = () => {                        
+        if (!formRef.current.checkValidity()) {
+            setValidated(true);
+            return
+        }        
+        setSaving(true);
+
+        const data = {
+            name,
+            count,
+            transport,
+            guests,
+            comments
+        };
+        
+        const url = 'http://localhost:8080/api/addGuest'
+        fetch(url, {
+            method: 'POST',
+            mode: 'cors',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify(data)
+        }).then(() => {
+            setSaving(false);
+            setSuccess(true)            
+        });        
     }
 
-    return (
-        <div className={styles.container}>
+    const form = (
+        <React.Fragment>
             <div className={styles.title}>Список гостей</div>        
             <div className={styles.form}>
-                <Form onSubmit={onSubmit}>
+                <Form 
+                    ref={formRef}                     
+                    noValidate 
+                    validated={validated}
+                >
                 <Form.Group>
                     <Form.Label>Имя</Form.Label>
-                    <Form.Control 
+                    <Form.Control                         
+                        required
                         placeholder="Введите имя" 
                         onChange={e => setName(e.target.value)}
                     />            
@@ -63,7 +96,8 @@ const Participants = () => {
                 <Form.Group>
                     <Form.Label>На чем приедем</Form.Label>
                     {TRANSPORT.map(name => 
-                        <Form.Check 
+                        <Form.Check   
+                            checked={name == transport}                        
                             key={name}
                             type="radio" 
                             label={name}
@@ -75,7 +109,8 @@ const Participants = () => {
                 </Form.Group>
                 <Form.Group controlId="exampleForm.ControlTextarea1">
                     <Form.Label>Комментарии</Form.Label>
-                    <Form.Control 
+                    <Form.Control
+                        noValidate
                         as="textarea" 
                         rows="3" 
                         placeholder="Напишите, есть ли у вас аллергия на продукты питания или другие особенности, необходимые учесть"
@@ -85,9 +120,28 @@ const Participants = () => {
             </div>
             <Button 
                 title="Отправить" 
-                size="m"                 
-                onClick={() => console.log(transport)}
+                size="m"            
+                loading={saving}
+                onClick={() => onSubmit()}
             />
+        </React.Fragment>
+    );
+
+    const result = (
+        <React.Fragment>
+            <div className={styles.title}>Будем ждать вас!:)</div>
+            <Button 
+                link='/main'
+                title="На главную" 
+                size="m"         
+                loading={saving}                
+            />
+        </React.Fragment>
+    );
+
+    return (
+        <div className={styles.container}>            
+            { success ? result : form }            
         </div>
     );
 }

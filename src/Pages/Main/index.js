@@ -27,7 +27,7 @@ const Main = () => (
                 <div>24 Июля, 17:00</div>
                 <div>Москва, Россия</div>
             </div>
-            <div>
+            <div className={styles.iwillgo}>
                 <Button size="m" title="Я пойду" link="/iwillgo" />
             </div>
         </div>

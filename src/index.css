@@ -11,3 +11,17 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.was-validated .form-control:valid {
+  background-image: none;
+  border-color: #CED4D9;
+  color: unset;
+}
+
+.was-validated .form-control:invalid {
+  background-image: none;
+}
+
+.form-check-input.is-valid~.form-check-label, .was-validated .form-check-input:valid~.form-check-label {
+  color: inherit;
+}

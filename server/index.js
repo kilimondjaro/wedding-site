@@ -1,6 +1,9 @@
 const express = require('express');
 // const favicon = require('express-favicon');
 const path = require('path');
+var bodyParser = require('body-parser')
+var cors = require('cors')
+const { addGuest } = require('./firebase')
 const port = process.env.PORT || 8080;
 
 const app = express();
@@ -8,16 +11,31 @@ const app = express();
 
 // app.use(express.static(path.join(__dirname, '/public')));
 app.use(express.static(path.join(__dirname, 'build')));
+app.use(bodyParser.json())
 
-//простой тест сервера
+
+var corsOptions = {
+    origin: 'http://localhost:3000',
+    optionsSuccessStatus: 200
+}
+app.use(cors(corsOptions))
+
+// Ping
 app.get('/ping', function (req, res) {
     return res.send('pong');
 });
 
-//обслуживание html
-app.get('/*', function (req, res) {
-    console.log('AAAAA');
+// API
+app.post('/api/addGuest', function(req, res) {
+    console.log(req.body)
+    addGuest(req.body)
+        .then(() => res.sendStatus(200))
+        .catch(() => res.sendStatus(500));    
+});
 
+// React
+app.get('/*', function (req, res) {
     res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
+
 app.listen(port);
