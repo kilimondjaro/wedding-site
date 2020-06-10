@@ -6,7 +6,7 @@ import styles from './index.module.css';
 
 const HeaderLink = ({to, title}) => (
     <div className={styles.container}>
-        <Link smooth to={`#${to}`}>
+        <Link smooth to={`/#${to}`}>
             {title}
         </Link>
     </div>

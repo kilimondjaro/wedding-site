@@ -3,27 +3,6 @@
     flex-direction: column;
 }
 
-.header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.navigation {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-.header .title {
-    font-size: 24px;
-}
-
-.navigation .link {
-    margin-left: 15px;
-}
-
 .block {
     margin: 30px 0;        
     height: calc(100vh - 40px);   

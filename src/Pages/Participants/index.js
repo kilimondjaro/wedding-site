@@ -2,6 +2,7 @@ import React, { useState, useRef } from 'react';
 import classnames from 'classnames';
 import { Form } from 'react-bootstrap';
 
+import Header from '../../Components/Header';
 import Button from '../../Components/Button';
 
 import styles from './index.module.css';
@@ -140,8 +141,11 @@ const Participants = () => {
     );
 
     return (
-        <div className={styles.container}>            
-            { success ? result : form }            
+        <div>
+            <Header />
+            <div className={styles.formContainer}>                        
+                { success ? result : form }       
+            </div>
         </div>
     );
 }
