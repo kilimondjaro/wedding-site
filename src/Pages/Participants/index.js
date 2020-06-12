@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
 import classnames from 'classnames';
 import { Form } from 'react-bootstrap';
+import { addGuest } from '../../Helpers/Requests';
 
 import Header from '../../Components/Header';
 import Button from '../../Components/Button';
@@ -39,13 +40,7 @@ const Participants = () => {
             comments
         };
         
-        const url = 'http://localhost:8080/api/addGuest'
-        fetch(url, {
-            method: 'POST',
-            mode: 'cors',
-            headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify(data)
-        }).then(() => {
+        addGuest(data).then(() => {
             setSaving(false);
             setSuccess(true)            
         });        
@@ -88,7 +83,7 @@ const Participants = () => {
                             <Form.Label>Кто с вами будет</Form.Label>
                             <Form.Control 
                                 placeholder="Введите имена" 
-                                onChange={e => setName(e.target.value)}
+                                onChange={e => setGuests(e.target.value)}
                             />            
                         </Form.Group>
                     )
@@ -98,7 +93,7 @@ const Participants = () => {
                     <Form.Label>На чем приедем</Form.Label>
                     {TRANSPORT.map(name => 
                         <Form.Check   
-                            checked={name == transport}                        
+                            checked={name === transport}                        
                             key={name}
                             type="radio" 
                             label={name}
@@ -115,6 +110,7 @@ const Participants = () => {
                         as="textarea" 
                         rows="3" 
                         placeholder="Напишите, есть ли у вас аллергия на продукты питания или другие особенности, необходимые учесть"
+                        onChange={e => setComments(e.target.value)}
                     />
                 </Form.Group>                        
                 </Form>

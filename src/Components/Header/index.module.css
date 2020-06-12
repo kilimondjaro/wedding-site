@@ -18,3 +18,8 @@
 .link {
     margin-left: 15px;
 }
+
+.submarine {
+    width: 150px;
+    object-fit: contain;
+}
