@@ -17,12 +17,14 @@
     flex-direction: column;
     justify-content: space-between; 
     align-items: center;
+    margin-top: 10px;
 }
 
-.main .image {
-    width: 100%;    
-    height: calc(100vh / 4 * 2);
+.main .image {    
+    width: 100vw;    
+    height: calc(100vh / 3 * 2);
     object-fit: cover;
+    object-position: 50% 70%;
 }
 
 .main .title {
