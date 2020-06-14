@@ -3,7 +3,7 @@ const express = require('express');
 const path = require('path');
 var bodyParser = require('body-parser')
 var cors = require('cors')
-const { addGuest, getWishlist, reserverGift } = require('./firebase')
+const { addGuest, getWishlist, reserverGift, deleteGift, addGift } = require('./firebase')
 const port = process.env.PORT || 8080;
 
 const app = express();
@@ -40,6 +40,18 @@ app.post('/api/addGuest', function(req, res) {
 
 app.post('/api/reserveGift', function(req, res) {    
     reserverGift(req.body)
+        .then(() => res.sendStatus(200))
+        .catch(() => res.sendStatus(500));    
+});
+
+app.post('/api/deleteGift', function(req, res) {    
+    deleteGift(req.body)
+        .then(() => res.sendStatus(200))
+        .catch(() => res.sendStatus(500));    
+});
+
+app.post('/api/addGift', function(req, res) {    
+    addGift(req.body)
         .then(() => res.sendStatus(200))
         .catch(() => res.sendStatus(500));    
 });

@@ -1,0 +1,13 @@
+.container {
+    
+}
+
+.delete {
+    cursor: pointer;
+    transition: opacity 0.2s ease-in-out;
+    margin-left: 20px;
+}
+
+.delete:hover {
+    opacity: 0.8;
+}

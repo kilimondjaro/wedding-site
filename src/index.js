@@ -10,6 +10,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 import Main from './Pages/Main';
 import Participants from './Pages/Participants';
+import Wishlist from './Pages/Wishlist';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
@@ -21,6 +22,9 @@ ReactDOM.render(
         </Route>
         <Route path="/iwillgo">
           <Participants />
+        </Route>
+        <Route path="/manageWishlist">
+          <Wishlist />
         </Route>
         <Route path="/">
           <Main />

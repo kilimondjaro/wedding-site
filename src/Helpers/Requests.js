@@ -5,7 +5,9 @@ const PORT = '8080'
 const routes = {
     getWishlist: '/api/getWishlist',
     addGuest: '/api/addGuest',
-    reserveGift: '/api/reserveGift'
+    reserveGift: '/api/reserveGift',
+    deleteGift: '/api/deleteGift',
+    addGift: '/api/addGift'
 }
 
 const METHOD = {
@@ -25,3 +27,5 @@ const fetchRequest = (method, route, data) => {
 export const getWishlist = () => fetchRequest(METHOD.get, routes.getWishlist)
 export const addGuest = data => fetchRequest(METHOD.post, routes.addGuest, data)
 export const reserverGift = data => fetchRequest(METHOD.post, routes.reserveGift, data)
+export const deleteGift = data => fetchRequest(METHOD.post, routes.deleteGift, data)
+export const addGift = data => fetchRequest(METHOD.post, routes.addGift, data)

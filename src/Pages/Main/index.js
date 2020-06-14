@@ -10,7 +10,7 @@ import mainImage from '../../assets/mainImage.jpeg';
 
 import styles from './index.module.css';
 
-const Main = () => (
+const MainPage = () => (
     <div className={styles.container}>
         <Header />        
 
@@ -34,4 +34,4 @@ const Main = () => (
     </div>
 );
 
-export default Main;
+export default MainPage;

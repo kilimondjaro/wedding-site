@@ -1,5 +1,4 @@
 import React, { useState, useRef } from 'react';
-import classnames from 'classnames';
 import { Form } from 'react-bootstrap';
 import { addGuest } from '../../Helpers/Requests';
 
@@ -13,7 +12,7 @@ const TRANSPORT = [
     'Машина'
 ];
 
-const Participants = () => {
+const ParticipantsPage = () => {
     const [name, setName] = useState(null);
     const [count, setCount] = useState(1);
     const [transport, setTransport] = useState(TRANSPORT[0]);
@@ -146,4 +145,4 @@ const Participants = () => {
     );
 }
 
-export default Participants;
+export default ParticipantsPage;

@@ -43,7 +43,7 @@ const Wishlist = () => {
 
         setWishlist(newWishlist);
     }
-    
+    console.log(wishlist)
     return (
         <div className={styles.container}>
             <div className={styles.title}>Наш Вишлист</div>
