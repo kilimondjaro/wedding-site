@@ -18,7 +18,7 @@ const METHOD = {
 const fetchRequest = (method, route, data) => {
     return fetch(`${HOST}:${PORT}${route}`, {
         method,
-        mode: 'cors',
+        mode: 'same-origin',
         headers: {'Content-Type': 'application/json'},
         body: data ? JSON.stringify(data) : null
     }).then(res => res.json());

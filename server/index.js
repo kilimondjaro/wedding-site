@@ -10,9 +10,8 @@ const app = express();
 // app.use(favicon(__dirname + '/build/favicon.png')); 
 
 // app.use(express.static(path.join(__dirname, '/public')));
-app.use(express.static(path.join(__dirname, 'build')));
+app.use(express.static(path.join(__dirname, '../build')));
 app.use(bodyParser.json())
-
 
 var corsOptions = {
     origin: 'http://localhost:3000',
@@ -58,7 +57,7 @@ app.post('/api/addGift', function(req, res) {
 
 // React
 app.get('/*', function (req, res) {
-    res.sendFile(path.join(__dirname, 'build', 'index.html'));
+    res.sendFile(path.join(__dirname, '../build', 'index.html'));
 });
 
 app.listen(port);
