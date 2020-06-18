@@ -3,6 +3,7 @@ const express = require('express');
 const path = require('path');
 var bodyParser = require('body-parser')
 var cors = require('cors')
+var sslRedirect = require('heroku-ssl-redirect');
 const { addGuest, getWishlist, reserverGift, deleteGift, addGift } = require('./firebase');
 const port = process.env.PORT || 8080;
 
@@ -20,13 +21,7 @@ var corsOptions = {
 app.use(cors(corsOptions))
 
 // HTTPS
-app.use(function (req, res, next) {
-    if (!req.secure) {
-        return res.redirect("https://" + req.get('host') + req.originalUrl)
-    }
-
-    return next()
-});
+app.use(sslRedirect());
 
 // Ping
 app.get('/ping', function (req, res) {
