@@ -1,6 +1,6 @@
 
-// const HOST = 'http://localhost'
-// const PORT = '8080'
+const HOST = 'http://localhost'
+const PORT = '8080'
 
 const routes = {
     getWishlist: '/api/getWishlist',
@@ -16,12 +16,22 @@ const METHOD = {
 }
 
 const fetchRequest = (method, route, data) => {
-    return fetch(`${route}`, {
+    const devUrl = `${HOST}:${PORT}${route}`
+    const prodUrl = `${route}`
+
+    return fetch(prodUrl, {
         method,
         mode: 'same-origin',
         headers: {'Content-Type': 'application/json'},
         body: data ? JSON.stringify(data) : null
-    }).then(res => res.json());
+    }).then(res => {                
+        if (res.ok) {
+            return res.json()
+                .then(data => data)
+                .catch(err => null)
+        }
+        return null;
+    });
 }
 
 export const getWishlist = () => fetchRequest(METHOD.get, routes.getWishlist)

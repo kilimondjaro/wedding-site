@@ -3,7 +3,7 @@ const express = require('express');
 const path = require('path');
 var bodyParser = require('body-parser')
 var cors = require('cors')
-const { addGuest, getWishlist, reserverGift, deleteGift, addGift } = require('./firebase')
+const { addGuest, getWishlist, reserverGift, deleteGift, addGift } = require('./firebase');
 const port = process.env.PORT || 8080;
 
 const app = express();
@@ -18,6 +18,15 @@ var corsOptions = {
     optionsSuccessStatus: 200
 }
 app.use(cors(corsOptions))
+
+// HTTPS
+app.use(function (req, res, next) {
+    if (!req.secure) {
+        return res.redirect("https://" + req.get('host') + req.originalUrl)
+    }
+
+    return next()
+});
 
 // Ping
 app.get('/ping', function (req, res) {
@@ -56,7 +65,7 @@ app.post('/api/addGift', function(req, res) {
 });
 
 // React
-app.get('/*', function (req, res) {
+app.get('/*', function (req, res) {    
     res.sendFile(path.join(__dirname, '../build', 'index.html'));
 });
 
