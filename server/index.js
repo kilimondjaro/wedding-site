@@ -10,8 +10,7 @@ const port = process.env.PORT || 8080;
 const app = express();
 // app.use(favicon(__dirname + '/build/favicon.png')); 
 
-// app.use(express.static(path.join(__dirname, '/public')));
-app.use(express.static(path.join(__dirname, '../build')));
+app.use('/client', express.static(path.join(__dirname, '../build')));
 app.use(bodyParser.json())
 
 var corsOptions = {
@@ -60,7 +59,7 @@ app.post('/api/addGift', function(req, res) {
 });
 
 // React
-app.get('/*', function (req, res) {    
+app.get('*', function (req, res) {    
     res.sendFile(path.join(__dirname, '../build', 'index.html'));
 });
 
