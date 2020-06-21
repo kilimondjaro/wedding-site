@@ -8,12 +8,11 @@
 .navigation {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    font-size: 25px;
+    justify-content: space-between;    
 }
 
 .title {
-    font-size: 24px;
+    font-size: 30px;
 }
 
 .link {

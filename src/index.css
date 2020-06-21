@@ -53,3 +53,8 @@ code {
   src: url('./assets/fonts/Montserrat-Bold.ttf') format("truetype");
   font-weight: bold;  
 }
+
+@font-face {
+  font-family: 'beatles';
+  src: local('beatles'), url(./assets/fonts/beatles.TTF) format('truetype');
+}

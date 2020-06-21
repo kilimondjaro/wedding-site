@@ -15,6 +15,7 @@ const Where = () => {
                     <div><b>Где:</b> метро Академическая, Москва </div>
                     <div><b>Когда:</b> 24 Июля, 15:30</div>
                 </div>
+                <div className={styles.middleTitle}>Ticket to ride</div>
                 <div>
                     <div className={styles.title}>Вечеринка</div>
                     <div><b>Где:</b> ул. Рябиновая 9, д. Десна</div>

@@ -9,6 +9,7 @@
     justify-content: space-between;    
     margin-bottom: 50px;
     padding: 0 30px;
+    color: #ffe022;
 }
 
 .title {
@@ -26,4 +27,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.middleTitle {
+    font-family: 'beatles';
+    font-size: 50px;
 }

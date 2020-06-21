@@ -46,7 +46,7 @@ const Wishlist = () => {
 
     return (
         <div className={styles.container}>
-            <div className={styles.title}>Наш Вишлист</div>
+            <div className={styles.title}>Can't buy me love</div>
             <div className={styles.grid}>
                 {
                     (wishlist || []).map((wishlist, key) => (

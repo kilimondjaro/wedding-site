@@ -7,7 +7,7 @@ import Wishlist from './Wishlist';
 import Where from './Where';
 
 import mainImage from '../../assets/mainImage.jpeg';
-import submarine from '../../assets/mainSubmarine.png';
+import submarine from '../../assets/lightYellowSubmarine.png';
 
 import styles from './index.module.css';
 
@@ -64,7 +64,7 @@ class MainPage extends React.PureComponent {
                 <div id="wishlist" className={styles.wishlist}>
                     <Wishlist />
                 </div>
-                <div id="contacts" className={classnames(styles.block, styles.contacts)} />
+                <div id="contacts" className={classnames(styles.contacts)} />
             </div>
         );
     }
