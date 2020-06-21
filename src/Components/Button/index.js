@@ -12,7 +12,8 @@ const Button = ({
     link, 
     onClick, 
     submit,
-    loading
+    loading,
+    propStyles
 }) => {
     const sizeMap = {
         s: styles['size-s'],
@@ -21,7 +22,7 @@ const Button = ({
 
     if (link) {
         return (
-            <div className={styles.link}>
+            <div className={classnames(styles.link, propStyles)}>
                 <Link className={classnames(sizeMap[size])} smooth to={link}>
                     {title}
                 </Link>    
@@ -31,7 +32,7 @@ const Button = ({
     }
 
     return (
-        <div className={styles.container}>
+        <div className={classnames(styles.container, propStyles)}>
             <button
                 type={submit ? 'submit' : null}
                 className={classnames(styles.button, sizeMap[size])}

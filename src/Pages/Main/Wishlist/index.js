@@ -43,13 +43,13 @@ const Wishlist = () => {
 
         setWishlist(newWishlist);
     }
-    console.log(wishlist)
+
     return (
         <div className={styles.container}>
             <div className={styles.title}>Наш Вишлист</div>
             <div className={styles.grid}>
                 {
-                    wishlist.map((wishlist, key) => (
+                    (wishlist || []).map((wishlist, key) => (
                         <WishlistItem 
                             key={wishlist.id} 
                             image={wishlist.imageUrl}

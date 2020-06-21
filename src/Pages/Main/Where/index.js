@@ -1,17 +1,19 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
 import { YMaps, Map, Placemark } from 'react-yandex-maps';
 
 import styles from './index.module.css'
 
 const Where = () => {
-    
+    const [isMapLoading, setIsMapLoading] = useState(true);
+    const mapRef = useRef(null); 
+
     return (
         <div className={styles.container}>
             <div className={styles.addresses}>
                 <div>
-                    <div className={styles.title}>ЗАГС</div>
-                    <div><b>Где:</b> ул. Малая Ордынка 14, Москва </div>
-                    <div><b>Когда:</b> 24 Июля, 14:30</div>
+                    <div className={styles.title}>Место сбора</div>
+                    <div><b>Где:</b> метро Академическая, Москва </div>
+                    <div><b>Когда:</b> 24 Июля, 15:30</div>
                 </div>
                 <div>
                     <div className={styles.title}>Вечеринка</div>
@@ -19,8 +21,27 @@ const Where = () => {
                     <div><b>Когда:</b> 24 Июля, 17:30</div>
                 </div>
             </div>
+            {isMapLoading
+                ? (
+                    <div className={styles.mapPlaceholder}>
+                        Карта уже грузится
+                    </div>
+                )
+                : null
+            }
             <YMaps>
-                <Map className={styles.map} defaultState={{ center: [55.66, 37.64], zoom: 10 }}>
+                <Map
+                    onLoad={() => {
+                        mapRef.current.behaviors.disable('scrollZoom')
+                        setIsMapLoading(false)
+                    }} 
+                    className={styles.map} 
+                    defaultState={{ 
+                        center: [55.66, 37.64], 
+                        zoom: 10                        
+                    }}
+                    instanceRef={mapRef}                    
+                >
                     <Placemark 
                         geometry={[55.522123, 37.381657]} 
                         options={{ preset: 'islands#blueBarIcon'}}
@@ -31,12 +52,12 @@ const Where = () => {
                         }} 
                     />
                     <Placemark 
-                        geometry={[55.737324, 37.625202]} 
+                        geometry={[55.687769, 37.573440]} 
                         options={{ preset: 'islands#blueLeisureIcon'}}
                         modules={['geoObject.addon.balloon']}
                         properties={{ 
-                            balloonContent: 'ЗАГС, Studio Royal <br/>ул. Малая Ордынка, 14',                            
-                            iconCaption: 'ЗАГС'
+                            balloonContent: 'Шатл до площадки<br/>м. Академическая',                            
+                            iconCaption: 'Шатл до площадки'
                         }} 
                     />
                 </Map>
