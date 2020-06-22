@@ -7,7 +7,10 @@ import yellowSubmarine from '../../assets/yellowSubmarine.png'
 
 const Header = ({ hasImage }) => (
     <div className={styles.header}>
-        <div className={styles.title}>Свадьба Полины и Кирилла</div>
+        <div className={styles.title}>
+            <div>Свадьба Полины и Кирилла</div>
+            <div className={styles.hashtag}>#weddingsubmarine</div>
+        </div>
         { hasImage ? (<img src={yellowSubmarine} className={styles.submarine} />) : null }
         <div className={styles.navigation}>
             <div className={styles.link}><HeaderLink to="main" title="Главная" /></div>            
