@@ -12,9 +12,9 @@ const Contacts = () => {
                 </div>
                 <div className={styles.separator} />
                 <div className={styles.phones}>
-                    <div>Полина +7 (909) 917-87-55‬</div>
-                    <div>Кирилл +7 (969) 089-03-94</div>                    
-                    Организатор Ирина ***<br/>                    
+                    <div className={styles.contact}>Полина +7 (909) 917-87-55‬</div>
+                    <div className={styles.contact}>Кирилл +7 (969) 089-03-94</div>                    
+                    <div className={styles.contact}>Организатор Ирина ***</div>
                 </div>
                 <div className={styles.separator} />
                 <div className={styles.copyright}>

@@ -113,3 +113,12 @@
 .car {
     width: 100%;
 }
+
+@media only screen and (max-width: 800px) {
+    .submarineContainer {
+        display: none;
+    }    
+    .carContainer {
+        display: none;
+    }
+}

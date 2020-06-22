@@ -27,3 +27,31 @@
     font-size: 40px;
     margin-top: 20px;
 }
+
+@media only screen and (max-width: 800px) { 
+    .container {
+        font-size: 14px;
+    }
+
+    .infoBlock {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .separator {
+        display: none;
+    }
+
+    .phones {
+        margin-top: 10px;
+    }
+
+    .contact {
+        margin-top: 5px;
+    }
+
+    .copyright {
+        margin-top: 10px;
+    }
+}
