@@ -56,6 +56,7 @@
 
 .submarine {
    width: 100%;
+   object-fit: contain;
 }
 
 .submarineButton {
@@ -117,7 +118,12 @@
 @media only screen and (max-width: 800px) {
     .submarineContainer {        
         width: 300px;
-    }        
+        display: block;              
+    }
+    .controls {
+        margin-left: 80px;
+    }   
+
     .title {
         display: none;
     }
@@ -126,6 +132,7 @@
     }
     .carContainer {
         width: 300px;
+        top: 60%;
     }
 
     .carContainer .text {

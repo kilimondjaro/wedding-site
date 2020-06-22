@@ -38,7 +38,7 @@ const Where = () => {
                     }} 
                     className={styles.map} 
                     defaultState={{ 
-                        center: [55.66, 37.64], 
+                        center: [55.66, 37.55], 
                         zoom: 10                        
                     }}
                     instanceRef={mapRef}                    

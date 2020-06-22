@@ -14,7 +14,7 @@ import car from '../../assets/yellowCar.png';
 import styles from './index.module.css';
 
 const SUBMARIN_START_Y = -200
-const CAR_START_X = -500
+const CAR_START_X = -700
 
 class MainPage extends React.PureComponent {
 
