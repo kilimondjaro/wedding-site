@@ -136,8 +136,9 @@
     }
 
     .carContainer .text {
-        top: 18px;
-        left: 82px;
+        top: 8px;
+        left: 102px;
         font-size: 18px;
+        width: 150px;
     }
 }
