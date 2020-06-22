@@ -34,11 +34,11 @@
     object-position: 50% 70%;
 }
 
-.main .title {
+.title {
     font-size: 45px;    
 }
 
-.main .date {
+.date {
     font-size: 24px;    
 }
 
@@ -115,10 +115,22 @@
 }
 
 @media only screen and (max-width: 800px) {
-    .submarineContainer {
+    .submarineContainer {        
+        width: 300px;
+    }        
+    .title {
         display: none;
-    }    
+    }
+    .date {
+        display: none;
+    }
     .carContainer {
-        display: none;
+        width: 300px;
+    }
+
+    .carContainer .text {
+        top: 18px;
+        left: 82px;
+        font-size: 18px;
     }
 }
