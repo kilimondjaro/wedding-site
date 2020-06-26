@@ -108,7 +108,7 @@ const ParticipantsPage = () => {
                         noValidate
                         as="textarea" 
                         rows="3" 
-                        placeholder="Напишите, есть ли у вас аллергия на продукты питания или другие особенности, необходимые учесть"
+                        placeholder="Напишите, есть ли у вас аллергия на продукты питания или другие особенности"
                         onChange={e => setComments(e.target.value)}
                     />
                 </Form.Group>                        
@@ -137,7 +137,7 @@ const ParticipantsPage = () => {
 
     return (
         <div>
-            <Header />
+            <div className={styles.header}><Header /></div>
             <div className={styles.formContainer}>                        
                 { success ? result : form }       
             </div>

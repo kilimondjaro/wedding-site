@@ -12,14 +12,19 @@ const WishlistItem = ({image, title, description, url, reserved, onReserve}) => 
                 <img className={styles.image} src={image} alt="" />
             </a>
             <div className={styles.itemTitle}>{title}</div>
-            <div className={styles.details}>Подробнее</div>
-            <div className={styles.reserveButton}>
-                <Button 
-                    title="Я подарю"  
-                    size="m"
-                    onClick={onReserve}
-                />
-            </div>
+            <a href={url} className={styles.details}>Подробнее</a>
+            <Button 
+                title="Я подарю"  
+                size="m"
+                onClick={onReserve}
+                propStyles={styles.reserveButton}
+            />
+            {reserved 
+                ? (
+                    <div className={styles.reservedText}>Меня уже дарят</div>
+                )
+                : null
+            }
         </div>
     );
 }
@@ -52,7 +57,7 @@ const Wishlist = () => {
             </div>
             <div className={styles.grid}>
                 {
-                    (wishlist || []).map((wishlist, key) => (
+                    (wishlist || []).sort(item => item.reserved ? 1 : -1).map((wishlist, key) => (
                         <WishlistItem 
                             key={wishlist.id} 
                             image={wishlist.imageUrl}
@@ -70,24 +75,3 @@ const Wishlist = () => {
 }
 
 export default Wishlist;
-
-
-// return Promise.resolve([
-    //     {
-    //         title: 'Соковыжималка для цитрусовых',
-    //         url: 'https://www.ozon.ru/product/kenwood-sokovyzhimalka-dlya-tsitrusovyh-je280a-173674450/',
-    //         imageUrl: 'https://cdn1.ozone.ru/s3/multimedia-x/wc1200/6015349461.jpg'
-    //     }, {
-    //         title: 'Беспроводной пылесос',
-    //         url: 'https://www.ozon.ru/context/detail/id/151517600/',
-    //         imageUrl: 'https://cdn1.ozone.ru/multimedia/1030882919.jpg'
-    //     }, {
-    //         title: 'Соковыжемалка',
-    //         url: 'https://www.eldorado.ru/cat/detail/71230534/',
-    //         imageUrl: 'https://images.philips.com/is/image/PhilipsConsumer/HR1919_70-IMS-ru_RU?$jpglarge$&wid=1250'
-    //     }, {
-    //         title: 'Увлажнитель воздуха',
-    //         url: 'https://www.ozon.ru/context/detail/id/138841502/',
-    //         imageUrl: 'https://cdn1.ozone.ru/multimedia/wc1200/1021372834.jpg'
-    //     }
-    // ]);
