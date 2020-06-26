@@ -15,6 +15,7 @@ const Contacts = () => {
                     <div className={styles.contact}>Полина +7 (909) 917-87-55‬</div>
                     <div className={styles.contact}>Кирилл +7 (969) 089-03-94</div>                    
                     <div className={styles.contact}>Организатор Ирина ***</div>
+                    <div className={styles.contact}>Ведущий Глеб +7 (915) 229-01-49‬</div>
                 </div>
                 <div className={styles.separator} />
                 <div className={styles.copyright}>

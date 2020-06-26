@@ -92,6 +92,40 @@
     font-size: 28px;    
 }
 
+.popup {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(255,255,255, 0.7);
+    z-index: 999;
+}
+
+.confirmContainer {        
+    padding: 40px;
+    background-color: #17a2b8;
+    border-radius: 20px;
+}
+
+.confirmContainer .title {
+    font-size: 30px;
+    font-family: 'Montserrat';
+    width: 100%;
+    text-align: center;
+    color: #ffe022;
+}
+
+.confirmContainer .buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
 @media only screen and (max-width: 800px) {
     .item {
         display: flex;
@@ -131,5 +165,9 @@
 
     .reservedText {
         font-size: 16px;
+    }
+
+    .confirmContainer {
+        margin: 20px;        
     }
 }
