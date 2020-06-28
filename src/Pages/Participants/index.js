@@ -8,7 +8,7 @@ import Button from '../../Components/Button';
 import styles from './index.module.css';
 
 const TRANSPORT = [
-    'Организованный шатл',    
+    'Организованный трансфер',    
     'Личный автомобиль',
     'Самостоятельно на такси'
 ];

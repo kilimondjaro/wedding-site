@@ -38,7 +38,7 @@ const DressCode = () => {
                         </div>
                         <div className={styles.description}>
                             Танцы будут проходить на асфальте или газоне, 
-                            просьба приходить в удобной обуви
+                            советуем приходить в удобной обуви
                         </div>           
                     </div>
                     <div className={styles.item}>

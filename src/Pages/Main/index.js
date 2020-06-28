@@ -15,7 +15,7 @@ import car from '../../assets/yellowCar.png';
 import styles from './index.module.css';
 
 const SUBMARIN_START_Y = -200
-const CAR_START_X = -700
+const CAR_START_X = -400
 
 class MainPage extends React.PureComponent {
 
@@ -63,7 +63,7 @@ class MainPage extends React.PureComponent {
                         <div className={styles.controls}>
                             <div className={styles.title}>Свадьба Полины и Кирилла</div>
                             <div className={styles.date}>
-                                <div>24 Июля, 17:00, Rock Veranda, Москва</div>                
+                                <div>24 Июля, 16:00, Rock Veranda, Москва</div>                
                             </div>
                             <div className={styles.iwillgo}>
                                 <Button 

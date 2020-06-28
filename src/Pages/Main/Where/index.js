@@ -13,15 +13,15 @@ const Where = () => {
         <div className={styles.container}>
             <div className={styles.addresses}>
                 <div className={styles.shuttle}>
-                    <div className={styles.title}>Место сбора</div>
+                    <div className={styles.title}>Трансфер до площадки</div>
                     <div><b>Где:</b> метро Академическая, Москва </div>
-                    <div><b>Когда:</b> 24 Июля, 15:30</div>
+                    <div><b>Когда:</b> 24 Июля, 15:00</div>
                 </div>
                 <div className={styles.middleTitle}>Ticket to ride</div>
                 <div className={styles.party}>
                     <div className={styles.title}>Вечеринка</div>
                     <div><b>Где:</b> ул. Рябиновая 9, д. Десна</div>
-                    <div><b>Когда:</b> 24 Июля, 17:30</div>
+                    <div><b>Когда:</b> 24 Июля, 16:00</div>
                 </div>
             </div>
             <div className={styles.iWillGo}>
@@ -67,8 +67,8 @@ const Where = () => {
                         options={{ preset: 'islands#blueLeisureIcon'}}
                         modules={['geoObject.addon.balloon']}
                         properties={{ 
-                            balloonContent: 'Шатл до площадки<br/>м. Академическая',                            
-                            iconCaption: 'Шатл до площадки'
+                            balloonContent: 'Трансфер до площадки<br/>м. Академическая',                            
+                            iconCaption: 'Трансфер до площадки'
                         }} 
                     />
                 </Map>
