@@ -47,7 +47,7 @@
 .submarineContainer {
     position: absolute;
     width: 700px; /* TODO: add media query */
-    display: flex;
+    display: block;
     justify-content: center;
     z-index: 1;
 }
@@ -71,7 +71,7 @@
     align-items: center;    
     font-family: 'Pacifico-Regular';
     padding: 21px 20px 15px 24px;
-    margin-left: 24px;
+    margin-left: 88px;
     border-radius: 70px;
 }
 
@@ -129,7 +129,7 @@
     }
     .carContainer {
         width: 300px;
-        top: 60%;
+        top: 66%;
     }
 
     .carContainer .text {

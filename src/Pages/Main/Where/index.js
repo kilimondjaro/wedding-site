@@ -12,13 +12,13 @@ const Where = () => {
     return (
         <div className={styles.container}>
             <div className={styles.addresses}>
-                <div>
+                <div className={styles.shuttle}>
                     <div className={styles.title}>Место сбора</div>
                     <div><b>Где:</b> метро Академическая, Москва </div>
                     <div><b>Когда:</b> 24 Июля, 15:30</div>
                 </div>
                 <div className={styles.middleTitle}>Ticket to ride</div>
-                <div>
+                <div className={styles.party}>
                     <div className={styles.title}>Вечеринка</div>
                     <div><b>Где:</b> ул. Рябиновая 9, д. Десна</div>
                     <div><b>Когда:</b> 24 Июля, 17:30</div>
