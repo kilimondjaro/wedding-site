@@ -20,7 +20,7 @@ const Where = () => {
                 <div className={styles.middleTitle}>Ticket to ride</div>
                 <div className={styles.party}>
                     <div className={styles.title}>Вечеринка</div>
-                    <div><b>Где:</b> ул. Рябиновая 9, д. Десна</div>
+                    <div><b>Где:</b> Rock Veranda, ул. Рябиновая 9, д. Десна</div>
                     <div><b>Когда:</b> 24 Июля, 16:00</div>
                 </div>
             </div>
@@ -59,7 +59,7 @@ const Where = () => {
                         modules={['geoObject.addon.balloon']}
                         properties={{ 
                             balloonContent: 'Rock Veranda <br/>Рябиновая ул., 9, д. Десна, Россия',                            
-                            iconCaption: 'Rock Veranda'
+                            iconCaption: 'Вечеринка (Rock Veranda)'
                         }} 
                     />
                     <Placemark 
