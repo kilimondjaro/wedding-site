@@ -9,13 +9,15 @@ import styles from './index.module.css';
 
 const TRANSPORT = [
     'Организованный шатл',    
-    'Машина'
+    'Личный автомобиль',
+    'Самостоятельно на такси'
 ];
 
 const ParticipantsPage = () => {
     const [name, setName] = useState(null);
     const [count, setCount] = useState(1);
-    const [transport, setTransport] = useState(TRANSPORT[0]);
+    const [toTransport, setToTransport] = useState(TRANSPORT[0]);
+    const [fromTransport, setFromTransport] = useState(TRANSPORT[0]);
     const [guests, setGuests] = useState(null);
     const [comments, setComments] = useState(null);
     const [validated, setValidated] = useState(false);
@@ -34,7 +36,8 @@ const ParticipantsPage = () => {
         const data = {
             name,
             count,
-            transport,
+            toTransport,
+            fromTransport,
             guests,
             comments
         };
@@ -92,13 +95,27 @@ const ParticipantsPage = () => {
                     <Form.Label>На чем приедем</Form.Label>
                     {TRANSPORT.map(name => 
                         <Form.Check   
-                            checked={name === transport}                        
+                            checked={name === toTransport}                        
                             key={name}
                             type="radio" 
                             label={name}
-                            name="transportRadio"       
+                            name="toTransportRadio"       
                             id={name}                 
-                            onChange={e => setTransport(e.target.id)}
+                            onChange={e => setToTransport(e.target.id)}
+                        />
+                    )}                    
+                </Form.Group>
+                <Form.Group>
+                    <Form.Label>На чем уедем</Form.Label>
+                    {TRANSPORT.map(name => 
+                        <Form.Check   
+                            checked={name === fromTransport}                        
+                            key={name}
+                            type="radio" 
+                            label={name}
+                            name="fromTransportRadio"       
+                            id={name}                 
+                            onChange={e => setFromTransport(e.target.id)}
                         />
                     )}                    
                 </Form.Group>
