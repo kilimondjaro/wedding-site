@@ -6,6 +6,7 @@ import Button from '../../Components/Button';
 import Wishlist from './Wishlist';
 import Where from './Where';
 import Contacts from './Contacts';
+import Dresscode from './Dresscode';
 
 import mainImage from '../../assets/mainImage.jpeg';
 import submarine from '../../assets/lightYellowSubmarine.png';
@@ -82,6 +83,9 @@ class MainPage extends React.PureComponent {
                         <img className={styles.car} src={car} />
                         <div className={styles.text}>Baby, you can drive my car</div>
                     </div>                      
+                </div>
+                <div id="dresscode">
+                    <Dresscode />
                 </div>
                 <div id="wishlist" className={styles.wishlist}>
                     <Wishlist />

@@ -1,0 +1,146 @@
+.container {
+    display: flex;
+    flex-direction: column;    
+    font-family: 'Montserrat';
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+    background-color: #ffe022;
+    width: 100%;
+}
+
+.title {
+    font-size: 50px;
+    font-family: 'beatles';
+    text-align: center;
+}
+
+.subtitle {
+    font-size: 50px;
+    font-family: 'Pacifico-Regular';
+    text-align: center;
+}
+
+.body {
+    display: flex;
+    flex-direction: column;    
+    align-items: center;
+    padding: 40px;
+    position: relative;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;    
+    width: 100%;
+}
+
+.row + .row {
+    margin-top: 50px;
+}
+
+.blockTitle {    
+    font-size: 30px;    
+}
+
+.description {    
+    font-size: 19px;
+}
+
+.shoes {    
+    margin-top: 40px;
+}
+
+.item {
+    width: 400px;
+}
+
+.image {
+    position: absolute;
+    object-fit: contain;
+    width: 300px;
+    left: 50%;
+    transform: translateX(-50%);    
+}
+
+.colors {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.color {
+    width: 80px;
+    height: 80px;
+    border-radius: 20px;        
+}
+
+.color + .color {
+    margin-left: 10px;
+}
+
+.pink {
+    background-color: #ff8d94;
+}
+
+.green {
+    background-color: #36b775;
+}
+
+.yellow {
+    background-color: #ffe022;
+}
+
+.blue {
+    background-color: #3593e0;
+}
+
+@media only screen and (max-width: 1130px) {
+    .image {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .title, .subtitle {
+        font-size: 40px;        
+    }
+
+    .blockTitle {    
+        font-size: 20px;
+    }
+    
+    .description {
+        font-size: 15px;
+    }
+
+    .row {
+        flex-direction: column;        
+    }
+
+    .row + .row {
+        margin-top: 0;
+    }
+
+    .item {
+        width: 100%;        
+    }
+
+    .item + .item {
+        margin-top: 30px;
+    }
+
+    .body {
+        padding: 10px 20px;
+    }
+
+    .color {
+        width: 60px;
+        height: 60px;
+        border-radius: 15px;        
+    }
+}

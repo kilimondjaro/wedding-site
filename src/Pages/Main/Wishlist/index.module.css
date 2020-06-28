@@ -126,6 +126,13 @@
     margin-top: 20px;
 }
 
+.money {
+    margin-top: 40px;
+    font-size: 20px;
+    text-align: center;
+    padding: 0 20px;
+}
+
 @media only screen and (max-width: 800px) {
     .item {
         display: flex;
@@ -169,5 +176,9 @@
 
     .confirmContainer {
         margin: 20px;        
+    }
+
+    .money {
+        font-size: 16px;
     }
 }

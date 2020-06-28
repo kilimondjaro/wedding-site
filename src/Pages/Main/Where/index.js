@@ -1,6 +1,8 @@
 import React, { useState, useRef } from 'react';
 import { YMaps, Map, Placemark } from 'react-yandex-maps';
 
+import Button from '../../../Components/Button';
+
 import styles from './index.module.css'
 
 const Where = () => {
@@ -21,6 +23,14 @@ const Where = () => {
                     <div><b>Где:</b> ул. Рябиновая 9, д. Десна</div>
                     <div><b>Когда:</b> 24 Июля, 17:30</div>
                 </div>
+            </div>
+            <div className={styles.iWillGo}>
+                <Button 
+                    title="Я пойду"  
+                    size="m"
+                    link="/iwillgo"
+                    propStyles={styles.goButton}
+                />
             </div>
             {isMapLoading
                 ? (

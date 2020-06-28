@@ -92,6 +92,7 @@ const Wishlist = () => {
                 <div className={styles.title}>Can't buy me love</div>
                 <div className={styles.subtitle}>Наш вишлист</div>
             </div>
+            <div className={styles.money}>Мы будем рады денежным подаркам и обещаем найти им наилучшее применение</div>
             <div className={styles.grid}>
                 {
                     (wishlist || []).map((wishlist, key) => (
