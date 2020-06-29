@@ -2,6 +2,7 @@ import React from 'react';
 
 import styles from './index.module.css';
 
+// Контакты
 const Contacts = () => {
     return (
         <div className={styles.container}>
