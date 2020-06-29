@@ -55,6 +55,20 @@ const DressCode = () => {
                     </div>
                 </div>                
             </div>
+            <div className={styles.header}>
+                <div className={styles.title}>Let it be</div>
+                <div className={styles.subtitle}>Наши пожелания</div>
+            </div>
+            <ul className={styles.recommendations}>
+                <li className={styles.recommendation}>
+                    Будем благодарны, если вы воздержитесь от криков «Горько!» на празднике,
+                    чтобы сохранить атмосферу уютного семейного торжества.
+                </li>
+                <li className={styles.recommendation}>
+                    Пожалуйста, не дарите нам цветы, так как мы уезжаем в путешествие и не успеем насладиться их красотой. 
+                    Вместо этого мы будем рады любому подарку из нашего вишлиста или вкладу в бюджет нашей молодой семьи.
+                </li>
+            </ul>
         </div>
     );
 }

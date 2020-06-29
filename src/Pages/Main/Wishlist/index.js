@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import classnames from 'classnames';
+import { Spinner } from 'react-bootstrap';
 
 import { getWishlist, reserverGift } from '../../../Helpers/Requests';
 import Button from '../../../Components/Button';
@@ -91,11 +92,10 @@ const Wishlist = () => {
             <div className={styles.header}>
                 <div className={styles.title}>Can't buy me love</div>
                 <div className={styles.subtitle}>Наш вишлист</div>
-            </div>
-            <div className={styles.money}>Мы будем рады денежным подаркам и обещаем найти им наилучшее применение</div>
+            </div>            
             <div className={styles.grid}>
-                {
-                    (wishlist || []).map((wishlist, key) => (
+                {(wishlist && wishlist.length > 0)
+                    ? (wishlist || []).map((wishlist, key) => (
                         <WishlistItem 
                             key={wishlist.id} 
                             image={wishlist.imageUrl}
@@ -106,6 +106,12 @@ const Wishlist = () => {
                             reserved={wishlist.reserved}
                         />
                     ))
+                    : (
+                        <div className={styles.wishlistLoading}>
+                            Вишлист загружается
+                            <div className={styles.spinner}><Spinner animation="border" /></div>
+                        </div>
+                    )
                 }
             </div>            
         </div>

@@ -134,6 +134,17 @@
     font-weight: 400;
 }
 
+.wishlistLoading {
+    margin-top: 40px;
+}
+
+
+.spinner {
+    display: inline;
+    vertical-align: middle;
+    margin-left: 10px;
+}
+
 @media only screen and (max-width: 800px) {
     .item {
         display: flex;
