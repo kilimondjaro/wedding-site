@@ -19,11 +19,11 @@ const WishlistItem = ({
     return (
         <React.Fragment>
             <div className={classnames(styles.item, {[styles.reserved]: reserved})}>
-                <a href={url}>
-                    <img className={styles.image} src={image} alt="" />
+                <a className={classnames({[styles.itemWithNoLink]: !url})} href={url}>
+                    <img className={classnames(styles.image)} src={image} alt="" />
                 </a>
                 <div className={styles.itemTitle}>{title}</div>
-                <a href={url} className={styles.details}>Подробнее</a>
+                <a href={url} className={classnames(styles.details, {[styles.itemWithNoLink]: !url})}>Подробнее</a>
                 <Button 
                     title="Я подарю"  
                     size="m"
