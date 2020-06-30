@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './index.module.css';
 import classnames from 'classnames';
 
-import dresscode from '../../../assets/dresscode.jpg';
+import dresscode from '../../../assets/dresscode.png';
 
 const DressCode = () => {
     return (

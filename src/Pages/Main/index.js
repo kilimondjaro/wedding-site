@@ -9,7 +9,7 @@ import Contacts from './Contacts';
 import Dresscode from './Dresscode';
 
 import mainImage from '../../assets/mainImage.jpeg';
-import submarine from '../../assets/lightYellowSubmarine.png';
+import submarine from '../../assets/detailedYellowSubmarine.png';
 import car from '../../assets/yellowCar.png';
 
 import styles from './index.module.css';
