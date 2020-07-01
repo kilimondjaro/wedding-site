@@ -61,7 +61,7 @@ const ParticipantsPage = () => {
                     <Form.Label>Имя</Form.Label>
                     <Form.Control                         
                         required
-                        placeholder="Введите имя" 
+                        placeholder="Введите имя и фамилию" 
                         onChange={e => setName(e.target.value)}
                     />            
                 </Form.Group>
