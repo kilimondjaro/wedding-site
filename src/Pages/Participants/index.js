@@ -67,7 +67,7 @@ const ParticipantsPage = () => {
                 </Form.Group>
         
                 <Form.Group>
-                <Form.Label>Сколько будет человек</Form.Label>
+                <Form.Label>Сколько будет человек (включая вас)</Form.Label>
                     <Form.Control 
                         as="select" 
                         onChange={e => setCount(e.target.value)}
