@@ -18,7 +18,7 @@ const WishlistItem = ({
 
     return (
         <React.Fragment>
-            <div className={classnames(styles.item, {[styles.reserved]: reserved})}>
+            <div className={classnames(styles.item)}>
                 <a className={classnames({[styles.itemWithNoLink]: !url})} href={url}>
                     <img className={classnames(styles.image)} src={image} alt="" />
                 </a>
@@ -28,7 +28,7 @@ const WishlistItem = ({
                     title="Я подарю"  
                     size="m"
                     onClick={() => setIsConfirming(true)}
-                    propStyles={styles.reserveButton}
+                    propStyles={classnames(styles.reserveButton, {[styles.reserved]: reserved})}
                 />
                 {reserved 
                     ? (
